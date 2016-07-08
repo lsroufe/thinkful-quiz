@@ -5,50 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Game of Thrones Quiz</title>
-	<link href="css/styles.css" rel="stylesheet">
 	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Game of Thrones Quiz</h1>
-			<p>Prepare Yourselves!</p>
+			<p>Select the House Name and Character Name!</p>
+		</div>
+		<div class="center-block row">
+			<div class="col-md-6">
+				<div class="radio">
+				  <label id="optionsRadiosHN1" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosHN" value="option1" style="display: none;">
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosHN2" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosHN" value="option2" style="display: none;"> 
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosHN3" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosHN" value="option3" style="display: none;"> 
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosHN4" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosHN" value="option4" style="display: none;"> 
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosHN5" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosHN" value="option5" style="display: none;">
+				  </label>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="radio">
+				  <label id="optionsRadiosCN1" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosCN" value="option1" style="display: none;">
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosCN2" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosCN" value="option2" style="display: none;">
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosCN3" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosCN" value="option3" style="display: none;">
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosCN4" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosCN" value="option4" style="display: none;">
+				  </label>
+				</div>
+				<div class="radio">
+				  <label id="optionsRadiosCN5" class="btn btn-primary">
+				    <input type="radio" name="optionsRadiosCN" value="option5" style="display: none;">
+				  </label>
+				</div>
+			</div>
 		</div>
 		<div class="row">
-			<div class="center-block" id="question"></div>
-		</div>
-		<div class="center-block row">
-			<div class="col-md-6">
-				<div class="radio">
-				  <label id="optionsRadios1">
-				    <input type="radio" name="optionsRadios" value="option1">
-				  </label>
-				</div>
-				<div class="radio">
-				  <label id="optionsRadios2">
-				    <input type="radio" name="optionsRadios" value="option2"> 
-				  </label>
-				</div>
-			</div>
-		<div class="center-block row">
-			<div class="col-md-6">
-				<div class="radio">
-				  <label id="optionsRadios3">
-				    <input type="radio" name="optionsRadios" value="option3">
-				  </label>
-				</div>
-				<div class="radio">
-				  <label id="optionsRadios4">
-				    <input type="radio" name="optionsRadios" value="option4">
-				  </label>
-				</div>
+			<div class="text-center">
+  				<button type="button" class="btn btn-primary btn-lg">Submit</button>
 			</div>
 		</div>
-	</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/questions.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

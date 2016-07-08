@@ -4,3 +4,19 @@
   margin-left: auto;
   width: 400px;
 }
+
+.btn-primary,
+.btn-primary:focus {
+    background-color: #9b2121;
+    border-color: #e7e010;
+}
+
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: #717b84;
+    border-color: #e7e010;
+}
+
+.btn-primary.checked {
+	background-color: black;
+}
