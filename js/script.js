@@ -18,7 +18,8 @@ $( document ).ready(function() {
 
    var loadHN = function(questionNum) {
    		
-   	$('#optionsRadiosHN1').append(questions[0].hn[0]);
+   	$('#optionsRadiosHN'+i+1).append(questions[0].hn[0]);
+   	$('#optionsRadiosHN1').append(questions[0].hn[1]);
 
    }
 
