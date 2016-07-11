@@ -2,7 +2,6 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  width: 400px;
 }
 
 .btn-primary,
@@ -19,4 +18,9 @@
 
 .btn-primary.checked {
 	background-color: black;
+}
+
+img {
+    width:auto; /* you can use % */
+    height: 210px;
 }
