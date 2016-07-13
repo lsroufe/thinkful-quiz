@@ -24,6 +24,8 @@ $( document ).ready(function() {
    		// TODO
    		// delete or empty the <label> elements before adding the new answers
    		// generate the HTML <input> to insert inside the <label>
+   		$('#choices').find('label').text('');
+
 
 
 		// for loop that loads the proper answers to both columns based on what question has been loaded
