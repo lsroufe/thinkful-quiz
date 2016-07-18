@@ -12,11 +12,13 @@ $( document ).ready(function() {
     	$('input[name="optionsRadiosCN"]').parent().removeClass('checked');
     	$(this).parent().addClass('checked');
     });
-	
+
+	var currentQuestion;
+
 	// This function loads the House Names and Character names options in the correct HTML elements as well as the image
     var loadQuestion = function(questionNum) {
    		// Assign the current question from the array of question objects (questions.js)
-   		var currentQuestion = questions[questionNum];
+   		currentQuestion = questions[questionNum];
    		// var questionHN = currentQuestion.hn;
    		// var questionCN = currentQuestion.cn;
 
@@ -54,11 +56,32 @@ $( document ).ready(function() {
 	// Set variable to start off on the 1st question
     var currentQuestionNumber = 0;
     
-    // run function passing the currentQuestionNumber, which at the beginnig is the 1st question
+    // run function passing the currentQuestionNumber, which at the beginning is the 1st question
     loadQuestion(currentQuestionNumber);
 
     //When user clicks the submit button add 1 to the currentQuestion number to allow the next question and answers to appear
     $('button').click(function(){
+    	var correctHN = currentQuestion.correcthn;
+		var correctCN = currentQuestion.correctcn;
+   		var choiceHN = $('#choices .checked').first().text();
+   		console.log(choiceHN);
+   		var choiceCN = $('#choices .checked').last().text();
+   		console.log(choiceCN);
+   		if (choiceHN == '' && choiceCN == '') {
+   			console.log("You must select a House Name");
+  			return;
+   		}
+   		if (choiceHN === correctHN && choiceCN === correctCN) {
+   			console.log("You're correct!");
+   		}
+   		else if (choiceHN === correctHN || choiceCN === correctCN) {
+   			console.log("You're half correct!");
+   		}
+   		else {
+   			console.log("Sorry, both answers are incorrect!");
+   		}
+
+   		
    		currentQuestionNumber++;
    		loadQuestion(currentQuestionNumber);
     });
