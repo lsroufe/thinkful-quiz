@@ -63,19 +63,30 @@ $( document ).ready(function() {
     $('button').click(function(){
     	var correctHN = currentQuestion.correcthn;
 		var correctCN = currentQuestion.correctcn;
+		var correctPoints = 0
    		var choiceHN = $('#choices .checked').first().text();
    		console.log(choiceHN);
    		var choiceCN = $('#choices .checked').last().text();
    		console.log(choiceCN);
+
+   		var questionPic = currentQuestion.pic;
+		var questionDesc = currentQuestion.desc;
+		function answersScreen(text) {
+			$('#modalDesc').text("Hello");
+		};
+
    		if (choiceHN == '' && choiceCN == '') {
    			console.log("You must select a House Name");
   			return;
    		}
    		if (choiceHN === correctHN && choiceCN === correctCN) {
    			console.log("You're correct!");
+   			this.correctPoints+=2;
    		}
    		else if (choiceHN === correctHN || choiceCN === correctCN) {
    			console.log("You're half correct!");
+   			this.correctPoints+=1;
+
    		}
    		else {
    			console.log("Sorry, both answers are incorrect!");
