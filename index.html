@@ -73,30 +73,35 @@
 				</div>
 			</div>
 		</div>
+		<div id="gameOver" class="hidden">
+			<h1></h1>
+			<p></p>
+		</div>
 		<div class="row">
-			<div class="text-center">
-<!--   			<button type="button" class="btn btn-primary btn-lg">Submit</button> -->
+			<div class=" text-center">
 				<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
-				<!-- Modal -->
-			  <div class="modal fade" id="myModal" role="dialog">
-			    <div class="modal-dialog modal-lg">
-			    
-			      <!-- Modal content-->
-			      <div class="modal-content">
-			        <div class="modal-header">
-			          <button type="button" class="close" data-dismiss="modal">&times;</button>
-			          <h4 class="modal-title"></h4>
-			        </div>
-			        <div id="modalDesc" class="modal-body"><h1></h1>
-
-					</div>
-			        <div class="modal-footer">
-			          <button type="button" class="btn btn-default" data-dismiss="modal">Next Question</button>
-			        </div>
-			      </div>
-			      
-			    </div>
 			</div>
+		</div>
+		<div class="modal fade text-center" id="myModal" role="dialog">
+		    <div class="modal-dialog modal-lg">
+		    
+		      <!-- Modal content-->
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4 class="modal-title"></h4>
+		        </div>
+		        <div id="modalDesc" class="modal-body">
+		        	<img>
+		        	<p id="correctAns"></p>
+		        	<p id="correctDesc"></p>
+				</div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Next Question</button>
+		        </div>
+		      </div>
+		      
+		    </div>
 		</div>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -54,10 +54,24 @@ $( document ).ready(function() {
 		$('#image').attr("src", currentQuestion.pic);
     }
 	// Set variable to start off on the 1st question
-    var currentQuestionNumber = 0;
+    var currentQuestionNumber = 4;
     
     // run function passing the currentQuestionNumber, which at the beginning is the 1st question
     loadQuestion(currentQuestionNumber);
+
+    function answerScreen(answerResult) {
+		$('.modal-title').text(answerResult);
+		$('#modalDesc').find('img').attr('src', currentQuestion.pic);
+		$('#correctAns').text(currentQuestion.correctcn + ' of ' + currentQuestion.correcthn);
+		$('#correctDesc').text(currentQuestion.desc);
+	};
+
+	function gameOver(finalScore) {
+		$('#choices').hide();
+		$('#gameOver h1').text("Game Over!");
+		$('#gameOver p').text(finalScore);
+		$('#gameOver').show().removeClass('hidden');
+	}
 
     //When user clicks the submit button add 1 to the currentQuestion number to allow the next question and answers to appear
     $('button').click(function(){
@@ -71,31 +85,33 @@ $( document ).ready(function() {
 
    		var questionPic = currentQuestion.pic;
 		var questionDesc = currentQuestion.desc;
-		
 
    		if (choiceHN == '' && choiceCN == '') {
    			console.log("You must select a House Name");
   			return;
    		}
+
    		if (choiceHN === correctHN && choiceCN === correctCN) {
    			console.log("You're correct!");
-   			this.correctPoints+=2;
+   			answerScreen("You're correct!");
+   			correctPoints+=2;
    		}
    		else if (choiceHN === correctHN || choiceCN === correctCN) {
    			console.log("You're half correct!");
-   			this.correctPoints+=1;
-
+   			answerScreen("You're half correct!");
+   			correctPoints+=1;
    		}
    		else {
    			console.log("Sorry, both answers are incorrect!");
+   			answerScreen("Sorry, both answers are incorrect!");
    		}
-
    		
+
+   		if (currentQuestionNumber >= 4) {
+   			gameOver(correctPoints);
+   		}
+   
    		currentQuestionNumber++;
    		loadQuestion(currentQuestionNumber);
     });
-
-    function answersScreen(text) {
-			$('#modalDesc').find('P').text(text).next('img').attr('src', questionPic).next('p').text(questionDesc);
-		};
 });

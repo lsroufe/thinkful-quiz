@@ -8,9 +8,9 @@ var questions = [{
 }, {
   pic : "img/sclegane.jpg",
   hn : ["House Clegane", "House Targaryen", "House Greyjoy", "House Lannister", "House Stark"],
-  cn : ["Podrick Payne", "Robb Stark", "Sandor Clegane - The Hound", "Alliser Thorne", "Theon Greyjoy"],
+  cn : ["Podrick Payne", "Robb Stark", "Sandor Clegane 'The Hound'", "Alliser Thorne", "Theon Greyjoy"],
   correcthn : "House Clegane",
-  correctcn : "Sandor Clegane - The Hound",
+  correctcn : "Sandor Clegane 'The Hound'",
   desc : "The Hound was the personal bodyguard to King Joffrey and carried out his commands, no matter how monstrous. After abandoning King's Landing during the Battle of the Blackwater, the Hound encountered Arya Stark in the Riverlands and been traveling with her ever since, in the hopes of collecting a ransom from her family."
 }, {
   pic : "img/clannister.jpg",
