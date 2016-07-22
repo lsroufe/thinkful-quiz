@@ -71,9 +71,7 @@ $( document ).ready(function() {
 
    		var questionPic = currentQuestion.pic;
 		var questionDesc = currentQuestion.desc;
-		function answersScreen(text) {
-			$('#modalDesc').text("Hello");
-		};
+		
 
    		if (choiceHN == '' && choiceCN == '') {
    			console.log("You must select a House Name");
@@ -96,4 +94,8 @@ $( document ).ready(function() {
    		currentQuestionNumber++;
    		loadQuestion(currentQuestionNumber);
     });
+
+    function answersScreen(text) {
+			$('#modalDesc').find('P').text(text).next('img').attr('src', questionPic).next('p').text(questionDesc);
+		};
 });
