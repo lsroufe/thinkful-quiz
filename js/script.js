@@ -14,6 +14,7 @@ $( document ).ready(function() {
     });
 
 	var currentQuestion;
+	var correctPoints = 0
 
 	// This function loads the House Names and Character names options in the correct HTML elements as well as the image
     var loadQuestion = function(questionNum) {
@@ -54,7 +55,7 @@ $( document ).ready(function() {
 		$('#image').attr("src", currentQuestion.pic);
     }
 	// Set variable to start off on the 1st question
-    var currentQuestionNumber = 4;
+    var currentQuestionNumber = 0;
     
     // run function passing the currentQuestionNumber, which at the beginning is the 1st question
     loadQuestion(currentQuestionNumber);
@@ -69,15 +70,16 @@ $( document ).ready(function() {
 	function gameOver(finalScore) {
 		$('#choices').hide();
 		$('#gameOver h1').text("Game Over!");
-		$('#gameOver p').text(finalScore);
+		$('#gameOver p').text("You're final score is: " + finalScore);
 		$('#gameOver').show().removeClass('hidden');
+		$('#modalButton').text("Done");
+		$('#submitButton').hide();
 	}
 
     //When user clicks the submit button add 1 to the currentQuestion number to allow the next question and answers to appear
-    $('button').click(function(){
+    $('#submitButton').click(function(){
     	var correctHN = currentQuestion.correcthn;
 		var correctCN = currentQuestion.correctcn;
-		var correctPoints = 0
    		var choiceHN = $('#choices .checked').first().text();
    		console.log(choiceHN);
    		var choiceCN = $('#choices .checked').last().text();
@@ -109,6 +111,7 @@ $( document ).ready(function() {
 
    		if (currentQuestionNumber >= 4) {
    			gameOver(correctPoints);
+   			return;
    		}
    
    		currentQuestionNumber++;
